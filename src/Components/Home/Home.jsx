@@ -1,10 +1,33 @@
 import './Home.css';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaGripLines } from "react-icons/fa";
 
 
 
 function Home() {
+
+
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
   return (
     <>
       <section className='h-[100vh] bg-[#050505] w-full'>
@@ -12,7 +35,7 @@ function Home() {
           <div className='flex items-center justify-between px-5 py-4 w-full'>
 
             <div className='flex items-center justify-center text-white'>
-              Logo Here!
+              <img src='./Images/logoport.png' className='w-[250px]'></img>
             </div>
 
             <div>
@@ -31,12 +54,15 @@ function Home() {
         <main className='h-[91vh]'>
           <div className='flex flex-col items-center justify-center relative h-full'>
             <div className='flex items-start justify-center relative h-[60vh]'>
-              <h1 className='text-[#303030] font-bold text-[200px]'>PORTFOLIO</h1>
+              <h1  className=
+                {`text-[200px] font-bold transition duration-500 ease-in-out transform ${scrolled ? 'text-[#D0F034] translate-y-6' : 'text-[#303030]'}`}>
+                PORTFOLIO
+              </h1>
             </div>
             <div className='flex justify-center h-[70vh] absolute bottom-0'>
               <img src='./Images/yourimage.webp' className=''></img>
             </div>
-            <div className='flex justify-around items-center absolute bottom-5 rounded-[35px] border-2 text-white bg-[rgba(255,255,255,0.15)] gap-10 px-6 py-5'>
+            <div className='flex justify-around items-center absolute bottom-5 rounded-[35px] border-2 text-white bg-[rgba(255,255,255,0.18)] gap-10 px-6 py-5'>
               <div>Work</div>
               <div>About Me</div>
               <div>Contact</div>
