@@ -8,7 +8,7 @@ function Home() {
   return (
     <>
       <section className='h-[100vh] bg-[#050505] w-full'>
-        <header className='bg-[#2D2D2D] px-2 w-full sticky inset-0 z-10 h-[9vh]'>
+        <header className='bg-[#2D2D2D] flex items-center justify-center px-2 w-full sticky inset-0 z-10 h-[9vh]'>
           <div className='flex items-center justify-between px-5 py-4'>
 
             <div className='flex items-center justify-center text-white'>
