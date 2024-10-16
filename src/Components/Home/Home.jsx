@@ -4,12 +4,12 @@ import { FaGripLines } from 'react-icons/fa';
 
 function Home() {
   const [scrolled, setScrolled] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0); 
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const position = window.scrollY;
-      setScrollPosition(position); 
+      setScrollPosition(position);
 
       if (position > 10) {
         setScrolled(true);
@@ -24,8 +24,6 @@ function Home() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-
 
   return (
     <>
@@ -50,42 +48,101 @@ function Home() {
             </div>
           </header>
 
-          <main className="h-[91vh] px-[3vh] pb-[3vh]">
-          <div className="w-full bg-[#0D0D0D] h-full rounded-[20px]">
-            <div className="flex flex-col items-center justify-center relative h-full ">
-              <div className="flex items-start justify-center relative h-[70vh]">
-                <h1 className={`text-[250px] font-bold transition duration-1000 ease-in-out transform ${scrolled ? 'text-[#D0F034] translate-x' : 'text-[#303030]'}`} 
-                style={{ transform: `translateY(${+scrollPosition * 0.6}px)` }}>
-                  PORTFOLIO
-                </h1>
-              </div>
-              <div
-                className="flex justify-center h-[85vh] fixed bottom-0 left-0 right-0 !z-0"
-                style={{ transform: `translateY(${-scrollPosition * 0.3}px)` }}>
-                <img src="./Images/yourimagehalf.png" className="" alt="Your Image" />
-              </div>
-              <div className="z-40 fixed bottom-4 flex justify-around items-center ">
-                <div className="flex space-x-4 backdrop-blur-sm bg-black/30 rounded-full px-4 py-2">
-                  <a href="#" className="text-white hover:text-gray-300 px-4 py-2">Home</a>
-                  <a href="#" className="text-white hover:text-gray-300 px-4 py-2">About</a>
-                  <a href="#" className="text-white hover:text-gray-300 px-4 py-2">Works</a>
-                  <a href="#" className="text-white hover:text-gray-300 px-4 py-2">Blogs</a>
-                  <a href="#" className="text-white hover:text-gray-300 px-4 py-2">Contact</a>
+          <main className="h-[88vh] px-[3vh]">
+            <div className="w-full bg-[#0D0D0D] h-full rounded-[20px]">
+              <div className="flex flex-col items-center justify-center relative h-full ">
+                <div className="flex items-start justify-center relative h-[70vh]">
+                  <h1 className={`text-[250px] font-bold transition duration-1000 ease-in-out transform ${scrolled ? 'text-[#D0F034] translate-x' : 'text-[#303030]'}`}
+                    style={{ transform: `translateY(${+scrollPosition * 0.6}px)` }}>
+                    PORTFOLIO
+                  </h1>
+                </div>
+                <div
+                  className="flex justify-center h-[85vh] fixed bottom-0 left-0 right-0 !z-0"
+                  style={{ transform: `translateY(${-scrollPosition * 0.3}px)` }}>
+                  <img src="./Images/yourimagehalf.png" className="" alt="Your Image" />
+                </div>
+                <div className="z-40 fixed bottom-[6vh] flex justify-center items-center rounded-full">
+                  <div className="flex space-x-4 backdrop-blur-xl bg-black/30 rounded-full px-[3vh] py-[2vh] ">
+                    <a href="#" className="text-white text-[14px] flex items-center hover:text-gray-800 px-5 hover:bg-[#D0F034] rounded-full py-2">Home</a>
+                    <a href="#" className="text-white text-[14px] flex items-center hover:text-gray-800 px-5 hover:bg-[#D0F034] rounded-full py-2">About</a>
+                    <a href="#" className="text-white text-[14px] flex items-center hover:text-gray-800 px-5 hover:bg-[#D0F034] rounded-full py-2">Works</a>
+                    <a href="#" className="text-white text-[14px] flex items-center hover:text-gray-800 px-5 hover:bg-[#D0F034] rounded-full py-2">Blogs</a>
+                    <a href="#" className="text-white text-[14px] flex items-center hover:text-gray-800 px-5 hover:bg-[#D0F034] rounded-full py-2">Contact</a>
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
           </main>
         </div>
 
-        <section className="reelSection w-full p-5 h-[100vh] bg-slate-500 relative !z-30">
+        <section className="reelSection w-full p-5 h-[100vh] bg-[#000000] relative !z-30">
           <div className="flex items-center justify-around h-full">
-            <div className="flex items-center justify-center w-[25%] text-[#2D2D2D] bg-[#000000] h-[80vh] rounded-[20px]">
-              <div className="text-[#303030] font-bold text-[150px]">REEL</div>
+            <div className="flex items-center justify-center w-[25%] text-[white] bg-gray-500 h-[80vh] rounded-[20px]">
+              <div className="text-[#303030] font-bold text-[150px]">
+
+
+                <div className="carousel rounded-box w-64 flex">
+                  <div className="carousel-item w-full">
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp"
+                      className="w-full"
+                      alt="Tailwind CSS Carousel component" />
+                  </div>
+                  <div className="carousel-item w-full">
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp"
+                      className="w-full"
+                      alt="Tailwind CSS Carousel component" />
+                  </div>
+                  <div className="carousel-item w-full">
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp"
+                      className="w-full"
+                      alt="Tailwind CSS Carousel component" />
+                  </div>
+                  <div className="carousel-item w-full">
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.webp"
+                      className="w-full"
+                      alt="Tailwind CSS Carousel component" />
+                  </div>
+                  <div className="carousel-item w-full">
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.webp"
+                      className="w-full"
+                      alt="Tailwind CSS Carousel component" />
+                  </div>
+                  <div className="carousel-item w-full">
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.webp"
+                      className="w-full"
+                      alt="Tailwind CSS Carousel component" />
+                  </div>
+                  <div className="carousel-item w-full">
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.webp"
+                      className="w-full"
+                      alt="Tailwind CSS Carousel component" />
+                  </div>
+                </div>
+
+
+              </div>
             </div>
-            <div className="flex-col items-center justify-center w-[35%]">
-              <div><h1 className="text-[#303030] font-bold text-[180px] transform transition-transform">HELLO</h1></div>
-              <div><p className="onlyPara text-[#303030] text-justify font-semibold text-[20px]">This is Ashish Thakur, a graphic designer and video editor hailing from the beautiful city of Taj, Agra. Having worked with big brands, youtubers, and creators different fields such as EdTech, Marketing, Consulting, among others, my heart lies where beautiful designs and eye-catching videos do. My passion for creating compelling visual designs and videos that bring stories to life navigates my enthusiasm and pathway to success.</p></div>
+            <div className="flex-col items-center justify-center w-full md:w-[35%]">
+              <div>
+                <h1
+                  className="text-[white] font-bold text-[100px] md:text-[150px] lg:text-[180px] transition-transform duration-500 ease-in-out hover:scale-[1.1] hover:transform-gpu hover:rotate-x-[20deg] hover:rotate-y-[10deg] origin-center"
+                  style={{ perspective: '1000px' }}>
+                  HELLO
+                </h1>
+              </div>
+              <div>
+                <p className="onlyPara text-gray-400 text-justify font-semibold text-[14px] md:text-[18px] lg:text-[20px]">
+                  This is Ashish Thakur, a graphic designer and video editor hailing from the beautiful city of Taj, Agra. Having worked with big brands, YouTubers, and creators from different fields such as EdTech, Marketing, Consulting, among others, my heart lies where beautiful designs and eye-catching videos do. My passion for creating compelling visual designs and videos that bring stories to life navigates my enthusiasm and pathway to success.
+                </p>
+              </div>
             </div>
           </div>
         </section>
