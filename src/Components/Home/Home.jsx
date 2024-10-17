@@ -3,6 +3,42 @@ import React, { useEffect, useState } from 'react';
 import { FaGripLines } from 'react-icons/fa';
 
 function Home() {
+
+  useEffect(() => {
+    const card = document.querySelector(".hellodiv");
+    const motionMatchMedia = window.matchMedia("(prefers-reduced-motion)");
+    const THRESHOLD = 15;
+  
+    const handleHover = (e) => {
+      const { clientX, clientY, currentTarget } = e;
+      const { clientWidth, clientHeight, offsetLeft, offsetTop } = currentTarget;
+  
+      const horizontal = (clientX - offsetLeft) / clientWidth;
+      const vertical = (clientY - offsetTop) / clientHeight;
+      const rotateX = (THRESHOLD / 2 - horizontal * THRESHOLD).toFixed(2);
+      const rotateY = (vertical * THRESHOLD - THRESHOLD / 2).toFixed(2);
+  
+      card.style.transform = `perspective(${clientWidth}px) rotateX(${rotateY}deg) rotateY(${rotateX}deg) scale3d(1, 1, 10)`;
+    };
+  
+    const resetStyles = (e) => {
+      card.style.transform = `perspective(${e.currentTarget.clientWidth}px) rotateX(0deg) rotateY(0deg)`;
+    };
+  
+    if (!motionMatchMedia.matches) {
+      card.addEventListener("mousemove", handleHover);
+      card.addEventListener("mouseleave", resetStyles);
+    }
+  
+    return () => {
+      if (card) {
+        card.removeEventListener("mousemove", handleHover);
+        card.removeEventListener("mouseleave", resetStyles);
+      }
+    };
+  }, []);
+
+
   const [scrolled, setScrolled] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -130,14 +166,17 @@ function Home() {
 
               </div>
             </div>
-            <div className="flex-col items-center justify-center w-full md:w-[35%]">
-              <div>
-                <h1
-                  className="text-[white] font-bold text-[100px] md:text-[150px] lg:text-[180px] transition-transform duration-500 ease-in-out hover:scale-[1.1] hover:transform-gpu hover:rotate-x-[20deg] hover:rotate-y-[10deg] origin-center"
-                  style={{ perspective: '1000px' }}>
-                  HELLO
-                </h1>
+            <div className="flex-col items-start justify-center w-full md:w-[38%]">
+
+
+              <div className="hellodiv card bg-cover bg-center rounded-[20px] overflow-hidden w-[100%] relative">
+                <div className="content z-[10] relative text-white text-center w-[100%]">
+                  <h1 className="helloheading text-[white] font-bold text-[180px] w-[100%]">
+                    HELLO
+                  </h1>
+                </div>
               </div>
+
               <div>
                 <p className="onlyPara text-gray-400 text-justify font-semibold text-[14px] md:text-[18px] lg:text-[20px]">
                   This is Ashish Thakur, a graphic designer and video editor hailing from the beautiful city of Taj, Agra. Having worked with big brands, YouTubers, and creators from different fields such as EdTech, Marketing, Consulting, among others, my heart lies where beautiful designs and eye-catching videos do. My passion for creating compelling visual designs and videos that bring stories to life navigates my enthusiasm and pathway to success.

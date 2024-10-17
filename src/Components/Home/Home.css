@@ -1,4 +1,24 @@
-section div .onlyPara{
+section div .onlyPara {
     line-height: 35px;
+
 }
 
+section div .helloheading {
+    background-image: url("./public/Images/gif.gif");
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hellodiv:hover .content {
+    transform: translateZ(30px);
+    overflow: visible;
+}
+
+.card-overlay {
+    transition: opacity 0.3s ease;
+}
+
+.hellodiv:hover .card-overlay {
+    opacity: 0.5;
+}
