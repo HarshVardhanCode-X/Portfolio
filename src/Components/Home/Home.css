@@ -3,7 +3,7 @@ section div .onlyPara {
 }
 
 section div .helloheading {
-    background-image: url("./public/Images/gif.gif");
+    background-image: url("./Images/gif.gif");
     background-repeat: repeat;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
