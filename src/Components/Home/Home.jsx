@@ -8,28 +8,28 @@ function Home() {
     const card = document.querySelector(".hellodiv");
     const motionMatchMedia = window.matchMedia("(prefers-reduced-motion)");
     const THRESHOLD = 15;
-  
+
     const handleHover = (e) => {
       const { clientX, clientY, currentTarget } = e;
       const { clientWidth, clientHeight, offsetLeft, offsetTop } = currentTarget;
-  
+
       const horizontal = (clientX - offsetLeft) / clientWidth;
       const vertical = (clientY - offsetTop) / clientHeight;
       const rotateX = (THRESHOLD / 2 - horizontal * THRESHOLD).toFixed(2);
       const rotateY = (vertical * THRESHOLD - THRESHOLD / 2).toFixed(2);
-  
+
       card.style.transform = `perspective(${clientWidth}px) rotateX(${rotateY}deg) rotateY(${rotateX}deg) scale3d(1, 1, 10)`;
     };
-  
+
     const resetStyles = (e) => {
       card.style.transform = `perspective(${e.currentTarget.clientWidth}px) rotateX(0deg) rotateY(0deg)`;
     };
-  
+
     if (!motionMatchMedia.matches) {
       card.addEventListener("mousemove", handleHover);
       card.addEventListener("mouseleave", resetStyles);
     }
-  
+
     return () => {
       if (card) {
         card.removeEventListener("mousemove", handleHover);
@@ -187,6 +187,98 @@ function Home() {
           </div>
         </section>
       </section>
+
+      <section>
+        <div className='content relative bg-[#060606] overflow-hidden'>
+          <div className='flex justify-center'><img src='./Images/logo.png' width={500} className='absolute opacity-20 top-[8%] transform transition-transform duration-500 ease-out hover:scale-105 animate-spin-3d'></img></div>
+          <div className='flex w-full justify-center  pt-[100px]'>
+            <div className=' w-[55%] justify-center'>
+              <p className='text-[#CDCDCD]  text-justify text-[25px]'>My work features a <b>BOLD</b>, retro style with a modern play on <i>typography</i> and effects, focusing on aesthetics while maintaining a brand touch.</p>
+            </div>
+          </div>
+          <div className='text-[#CDCDCD] w-full flex justify-center pt-[75px] '>
+            <div className='flex w-[55%] justify-between'>
+              <div className='flex flex-col gap-3'>
+                <div className='text-[20px]'><span><b>Software</b></span></div>
+                <div>
+                  <ul>
+                    <li>Adobe Premiere pro</li>
+                    <li>Adobe After Effects</li>
+                    <li>Adobe photoshop</li>
+                    <li>Adobe Illustrator</li>
+                    <li>Adobe Lightroom</li>
+                    <li>Adobe XD</li>
+                    <li>davinci resolve</li>
+                    <li>Figma</li>
+                  </ul>
+                </div>
+              </div>
+              <div className='flex flex-col gap-3'>
+                <div className='text-[20px]'><span><b>Abilities</b></span></div>
+                <div>
+                  <ul>
+                    <li>Creativity</li>
+                    <li>Typography</li>
+                    <li>Color Therapy</li>
+                    <li>Layout Design</li>
+                    <li>Attention to Detail</li>
+                    <li>Problem Solving</li>
+                    <li>Time Management</li>
+                    <li>Print Design</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='text-[#3E3E3E] w-full flex justify-center pt-[100px] pb-[100px]'>
+            <div className='w-[55%] flex justify-center'>
+              {/* <video controls autoplay muted loop>
+            <source src='vid.mp4' type="video/mp4"></source>
+            <p>SHOWREEL</p>
+          </video> */}
+              <div className="carousel w-full rounded-[20px]">
+                <div id="slide1" className="carousel-item relative w-full">
+                  <img
+                    src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
+                    className="w-full" />
+                  <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                    <a href="#slide4" className="btn btn-circle">❮</a>
+                    <a href="#slide2" className="btn btn-circle">❯</a>
+                  </div>
+                </div>
+                <div id="slide2" className="carousel-item relative w-full">
+                  <img
+                    src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
+                    className="w-full" />
+                  <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                    <a href="#slide1" className="btn btn-circle">❮</a>
+                    <a href="#slide3" className="btn btn-circle">❯</a>
+                  </div>
+                </div>
+                <div id="slide3" className="carousel-item relative w-full">
+                  <img
+                    src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
+                    className="w-full" />
+                  <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                    <a href="#slide2" className="btn btn-circle">❮</a>
+                    <a href="#slide4" className="btn btn-circle">❯</a>
+                  </div>
+                </div>
+                <div id="slide4" className="carousel-item relative w-full">
+                  <img
+                    src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
+                    className="w-full" />
+                  <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                    <a href="#slide3" className="btn btn-circle">❮</a>
+                    <a href="#slide1" className="btn btn-circle">❯</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </>
   );
 }
