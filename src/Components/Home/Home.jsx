@@ -193,11 +193,12 @@ function Home() {
           <div className='flex justify-center'><img src='./Images/logo.png' width={500} className='absolute opacity-20 top-[8%] transform transition-transform duration-500 ease-out hover:scale-105 animate-spin-3d'></img></div>
           <div className='flex w-full justify-center  pt-[100px]'>
             <div className=' w-[55%] justify-center'>
-              <p className='text-[#CDCDCD]  text-justify text-[25px]'>My work features a <b>BOLD</b>, retro style with a modern play on <i>typography</i> and effects, focusing on aesthetics while maintaining a brand touch.</p>
+              <p className='text-[#CDCDCD]   text-[25px] text-justify'>My work features a <b>BOLD</b>, retro style with a modern play on <i>typography</i> and effects, focusing on aesthetics while maintaining a brand touch.</p>
             </div>
           </div>
           <div className='text-[#CDCDCD] w-full flex justify-center pt-[75px] '>
-            <div className='flex w-[55%] justify-between'>
+            <div className='flex w-[55%] justify-between '>
+
               <div className='flex flex-col gap-3'>
                 <div className='text-[20px]'><span><b>Software</b></span></div>
                 <div>
