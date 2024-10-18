@@ -68,7 +68,7 @@ function Home() {
           <header className="bg-[#000000] px-2 sticky inset-0 h-[9vh] flex items-center justify-center z-40">
             <div className="flex items-center justify-between px-5 py-4 w-full">
               <div className="flex items-center justify-center text-white">
-                <img src="./Images/logoport.png" className="w-[250px]" alt="Logo" />
+                <img src="./Images/logoport.png" className="w-[33vh]" alt="Logo" />
               </div>
               <div>
                 <div className="dropdown dropdown-end">
@@ -76,34 +76,35 @@ function Home() {
                     <FaGripLines size={20} className="text-white" />
                   </div>
                   <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                    <li><a href="#">reel 1</a></li>
-                    <li><a href="#">reel 2</a></li>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Works</a></li>
+                    <li><a href="#">Blog</a></li>
                   </ul>
                 </div>
               </div>
             </div>
           </header>
 
-          <main className="h-[88vh] px-[3vh]">
+          <main className="h-[91vh] px-[3vh] pb-[3vh]">
             <div className="w-full bg-[#0D0D0D] h-full rounded-[20px]">
               <div className="flex flex-col items-center justify-center relative h-full ">
                 <div className="flex items-start justify-center relative h-[70vh]">
-                  <h1 className={`text-[250px] font-bold transition duration-1000 ease-in-out transform ${scrolled ? 'text-[#D0F034] translate-x' : 'text-[#303030]'}`}
-                    style={{ transform: `translateY(${+scrollPosition * 0.6}px)` }}>
+                  <h1 className={`text-[34vh] font-bold transition duration-1000 ease-in-out transform ${scrolled ? 'text-[#D0F034] translate-x' : 'text-[#303030]'}`}
+                    style={{ transform: `translateY(${+scrollPosition * 0.08}vh)` }}>
                     PORTFOLIO
                   </h1>
                 </div>
                 <div
                   className="flex justify-center h-[85vh] fixed bottom-0 left-0 right-0 !z-0"
-                  style={{ transform: `translateY(${-scrollPosition * 0.3}px)` }}>
+                  style={{ transform: `translateY(${-scrollPosition * 0.04}vh)` }}>
                   <img src="./Images/yourimagehalf.png" className="" alt="Your Image" />
                 </div>
                 <div className="z-40 fixed bottom-[6vh] flex justify-center items-center rounded-full">
-                  <div className="flex space-x-4 backdrop-blur-xl bg-black/30 rounded-full px-[3vh] py-[2vh] ">
-                    <a href="#" className="text-white text-[14px] flex items-center hover:text-gray-800 px-5 hover:bg-[#D0F034] rounded-full py-2">Home</a>
-                    <a href="#" className="text-white text-[14px] flex items-center hover:text-gray-800 px-5 hover:bg-[#D0F034] rounded-full py-2">About</a>
-                    <a href="#" className="text-white text-[14px] flex items-center hover:text-gray-800 px-5 hover:bg-[#D0F034] rounded-full py-2">Works</a>
-                    <a href="#" className="text-white text-[14px] flex items-center hover:text-gray-800 px-5 hover:bg-[#D0F034] rounded-full py-2">Blogs</a>
+                  <div className="flex space-x-4 backdrop-blur-xl bg-black/35 rounded-full px-[3vh] py-[2vh] ">
+                    <a href="#" className="text-white text-[14px] flex items-center hover:text-gray-800 px-5 hover:bg-[#D0F034] rounded-full py-2">Work</a>
+                    <a href="#" className="text-white text-[14px] flex items-center hover:text-gray-800 px-5 hover:bg-[#D0F034] rounded-full py-2">About Me</a>
                     <a href="#" className="text-white text-[14px] flex items-center hover:text-gray-800 px-5 hover:bg-[#D0F034] rounded-full py-2">Contact</a>
                   </div>
                 </div>
@@ -112,9 +113,9 @@ function Home() {
           </main>
         </div>
 
-        <section className="reelSection w-full p-5 h-[100vh] bg-[#000000] relative !z-30">
+        <section className="reelSection w-full p-5 h-[100vh] bg-[white] relative !z-30">
           <div className="flex items-center justify-around h-full">
-            <div className="flex items-center justify-center w-[25%] text-[white] bg-gray-500 h-[80vh] rounded-[20px]">
+            <div className="flex items-center justify-center w-[25%] text-[white] bg-black h-[80vh] rounded-[20px]">
               <div className="text-[#303030] font-bold text-[150px]">
 
 
@@ -170,15 +171,15 @@ function Home() {
 
 
               <div className="hellodiv card bg-cover bg-center rounded-[20px] overflow-hidden w-[100%] relative">
-                <div className="content z-[10] relative text-white text-center w-[100%]">
-                  <h1 className="helloheading text-[white] font-bold text-[180px] w-[100%]">
+                <div className="content z-[10] relative text-center w-[100%]">
+                  <h1 className="helloheading font-bold text-[25vh] w-[100%]">
                     HELLO
                   </h1>
                 </div>
               </div>
 
               <div>
-                <p className="onlyPara text-gray-400 text-justify font-semibold text-[14px] md:text-[18px] lg:text-[20px]">
+                <p className="onlyPara text-gray-800 text-justify font-semibold text-[1.8vh] md:text-[18px] lg:text-[20px]">
                   This is Ashish Thakur, a graphic designer and video editor hailing from the beautiful city of Taj, Agra. Having worked with big brands, YouTubers, and creators from different fields such as EdTech, Marketing, Consulting, among others, my heart lies where beautiful designs and eye-catching videos do. My passion for creating compelling visual designs and videos that bring stories to life navigates my enthusiasm and pathway to success.
                 </p>
               </div>
