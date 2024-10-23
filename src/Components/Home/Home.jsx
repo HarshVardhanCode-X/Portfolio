@@ -1,8 +1,29 @@
 import './Home.css';
 import React, { useEffect, useState } from 'react';
 import { FaGripLines } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 
 function Home() {
+
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition > 3000) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
 
   useEffect(() => {
     const card = document.querySelector(".hellodiv");
@@ -63,6 +84,14 @@ function Home() {
 
   return (
     <>
+
+
+      <Helmet>
+        <title>Home Page - My App</title>
+        <meta name="keywords" content="portfolio, ashish" />
+      </Helmet>
+
+
       <section className="w-full">
         <div className="bg-[#000000] w-full ">
           <header className="bg-[#000000] px-2 sticky inset-0 h-[9vh] flex items-center justify-center z-40">
@@ -277,6 +306,136 @@ function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="flex flex-col items-center bg-black w-[100%]">
+        <div className="main-foot flex flex-row justify-between h-[100vh] w-[80%]">
+          <ul className="flex flex-col items-center justify-center text-[#8B8B8B]">
+            <li className="mt-5">The Browser company of New York</li>
+            <li className="mt-5">Mollie</li>
+            <li className="mt-5">The Browser company of New York</li>
+            <li className="mt-5">Mollie</li>
+          </ul>
+          <ul className="flex flex-col items-center justify-center text-[#8B8B8B]">
+            <li className="mt-5">Perplexity</li>
+            <li className="mt-5">Dribble</li>
+            <li className="mt-5">Perplexity</li>
+            <li className="mt-5">Dribble</li>
+          </ul>
+          <ul className="flex flex-col items-center justify-center text-[#8B8B8B]">
+            <li className="mt-5">_zapier</li>
+            <li className="mt-5">Lark</li>
+            <li className="mt-5">_zapier</li>
+            <li className="mt-5">Lark</li>
+          </ul>
+          <ul className="flex flex-col items-center justify-center text-[#8B8B8B]">
+            <li className="mt-5">Whereby</li>
+            <li className="mt-5">Bird</li>
+            <li className="mt-5">Whereby</li>
+            <li className="mt-5">Bird</li>
+          </ul>
+        </div>
+        <div className="review flex h-[100vh] w-[80%] items-center justify-between">
+          <div className="carousel flex-sm loop rounded-box w-[30%] h-[80vh]">
+            <div className="carousel-item">
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp"
+                className="w-[60]"
+                alt="Tailwind CSS Carousel component"
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1565098772267-60af42b81ef2.webp"
+                className="w-[60]"
+                alt="Tailwind CSS Carousel component"
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1572635148818-ef6fd45eb394.webp"
+                className="w-[60]"
+                alt="Tailwind CSS Carousel component"
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1494253109108-2e30c049369b.webp"
+                className="w-[60]"
+                alt="Tailwind CSS Carousel component"
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1550258987-190a2d41a8ba.webp"
+                className="w-[60]"
+                alt="Tailwind CSS Carousel component"
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1559181567-c3190ca9959b.webp"
+                className="w-[60]"
+                alt="Tailwind CSS Carousel component"
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1601004890684-d8cbf643f5f2.webp"
+                className="w-[60]"
+                alt="Tailwind CSS Carousel component"
+              />
+            </div>
+          </div>
+          <div className="review01 flex-sm flex-col w-[50%] h-[80vh] items-start justify-start">
+            <h2 className="text-5xl text-white m-5">
+              What Our Customers Have to Say!
+            </h2>
+            <h1 className="text-3xl text-white m-5">CustomerName</h1>
+            <p className="m-5 text-xl text-white">
+              On October 8, researchers showed, for the first time, the
+              possibility of water desalination without necessarily installing a
+              large battery on site or connecting the water desalination system
+              to the power grid.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className='w-full h-[100vh]   '>
+          <div className=" p-5 w-full bg-[url('/Images/Portfolio1.png')] bg-cover bg-center  bg-no-repeat">
+            <div className=' w-full p-10 flex justify-between h-[100vh] '>
+              <div className={` text-white font-bold text-4xl w-80 pt-12 p-6 rounded-lg  transition-all duration-700 ease-in-out transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-40 opacity-0'
+                }`}>
+                <h1 >Tell me. </h1>
+                <h1>work with me</h1>
+
+              </div>
+
+              <div className={`h-[450px] p-10  !bg-[#080808] rounded-[10px] items-center bg-transparent !bg-opacity-40 text-[13px] mr-5 transition-all duration-700 ease-in-out transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-40 opacity-0'
+                }`}  >
+                <form action="">
+                  <div>
+                    <input type="text" placeholder='name' className='w-64  p-3 mt-10 bg-transparent outline-none !bg-[rgb(50,50,51)] !bg-opacity-60 rounded-[10px] items-center text-white' />
+                  </div>
+                  <div>
+                    <input type="email" placeholder='email' className='w-64  p-3 bg-transparent outline-none !bg-[rgb(50,50,51)] !bg-opacity-60 rounded-[10px] mt-7 pl-3 items-center text-white' />
+                  </div>
+                  <div>
+                    <input type="text" placeholder='any msg type here ' className='w-64  p-3 bg-transparent outline-none !bg-[rgb(50,50,51)] !bg-opacity-60 rounded-[10px] mt-7 pl-3 pb-10 text-white ' />
+                  </div>
+                  <div>
+                    <button className='w-64  mb-10 p-3 bg-transparent outline-none !bg-[rgb(50,50,51)] !bg-opacity-60 rounded-[10px] mt-7 pl-3 items-center text-[#F2FFF2]  font-bold'>Submit</button>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+        
+          </div>
+
         </div>
       </section>
 
